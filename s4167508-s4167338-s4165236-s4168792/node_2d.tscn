@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bjxflwcgpmk56"]
+
+[ext_resource type="Script" uid="uid://cscyxo17ghh3f" path="res://node_2d.gd" id="1_kdubu"]
+[ext_resource type="Texture2D" uid="uid://45vt3fgpk73q" path="res://Background/BackgroundVisuals/a-celestial-background-features-numerous-stars-sparkling-against-a-dark-to-light-purple-evening-sky-photo.jpg" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://c0ormyqqef4ok" path="res://Background/BackgroundVisuals/pixel-art-planet-exotic-planet-icon-for-8bit-game-on-white-background-vector.png" id="2_kdubu"]
+[ext_resource type="Texture2D" uid="uid://is7qx1vf4ks4" path="res://Background/BackgroundVisuals/Screenshot 2026-08-01 at 13.00.13.png" id="3_d21ai"]
+[ext_resource type="Texture2D" uid="uid://wu33xw1rt1x7" path="res://Background/BackgroundVisuals/pixel-art-cloud-simple-sky-weather-icon-design-art-free-png.png" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://duhuu40566kgb" path="res://Background/BackgroundVisuals/1680x480-1.png" id="7_rj586"]
+[ext_resource type="Texture2D" uid="uid://csyhr86dctdca" path="res://Background/BackgroundVisuals/1-16577_twinkle-stars-png-transparent.png" id="8_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://by5l81l662mgf" path="res://Scenes/enemy.tscn" id="8_rj586"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x15ge"]
+size = Vector2(599, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0akp"]
+size = Vector2(98, 1115.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
+size = Vector2(98, 1110.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(1347, 106.3125)
+
+[node name="Node2D" type="Node2D" unique_id=299655436]
+script = ExtResource("1_kdubu")
+enemy_to_spawn = ExtResource("8_rj586")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1571021637]
+
+[node name="GradientBackground" type="Sprite2D" parent="ParallaxBackground" unique_id=892216205]
+texture_filter = 1
+position = Vector2(293.00003, 389.00003)
+scale = Vector2(0.89714295, 2.3657143)
+texture = ExtResource("1_q6r6c")
+metadata/_edit_lock_ = true
+
+[node name="MoonLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1064340542]
+modulate = Color(0.5568628, 0.7058824, 0.92156863, 0.41960785)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(0, 1320)
+metadata/_edit_lock_ = true
+
+[node name="MoonSprite" type="Sprite2D" parent="ParallaxBackground/MoonLayer" unique_id=1634104247]
+modulate = Color(0.62352943, 0.61960787, 0.91764706, 1)
+position = Vector2(460.99997, -414)
+scale = Vector2(0.20841835, 0.20280613)
+texture = ExtResource("2_kdubu")
+
+[node name="EarthLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=606775292]
+modulate = Color(0.7019608, 0.73333335, 0.9254902, 0.4862745)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(0, 2000)
+metadata/_edit_lock_ = true
+
+[node name="EarthSprite" type="Sprite2D" parent="ParallaxBackground/EarthLayer" unique_id=142923932]
+position = Vector2(91, -129)
+scale = Vector2(0.4127907, 0.38988096)
+texture = ExtResource("3_d21ai")
+
+[node name="CloudLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=274804165]
+position = Vector2(1059, -100)
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(0, 1500)
+metadata/_edit_lock_ = true
+
+[node name="Cloud1" type="Sprite2D" parent="ParallaxBackground/CloudLayer" unique_id=504345080]
+modulate = Color(0.74509805, 0.74509805, 0.91764706, 0.6431373)
+position = Vector2(-627.5, -527.5)
+scale = Vector2(0.46000028, 0.4257144)
+texture = ExtResource("4_rj586")
+flip_h = true
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground/CloudLayer" unique_id=1182779157]
+modulate = Color(0.74509805, 0.74509805, 0.91764706, 0.6431373)
+position = Vector2(-891.09375, -8.125015)
+scale = Vector2(0.38339284, 0.37642854)
+texture = ExtResource("4_rj586")
+
+[node name="LayerStarsFar" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2026824787]
+modulate = Color(0.7019608, 0.73333335, 0.9254902, 0.8666667)
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(0, 2000)
+
+[node name="SmallStarSprite" type="Sprite2D" parent="ParallaxBackground/LayerStarsFar" unique_id=656454403]
+modulate = Color(0.940299, 0.9580597, 0.9830299, 1)
+position = Vector2(381.00003, 176.50009)
+scale = Vector2(2.3821425, 4.5354166)
+texture = ExtResource("7_rj586")
+
+[node name="LayerStarsNear" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1908551462]
+motion_scale = Vector2(1.3, 1.3)
+motion_mirroring = Vector2(0, 1600)
+
+[node name="BigStarSprite" type="Sprite2D" parent="ParallaxBackground/LayerStarsNear" unique_id=504826638]
+modulate = Color(0.90588236, 0.8039216, 0.8745098, 0.5411765)
+texture_filter = 1
+position = Vector2(298.00003, 211)
+scale = Vector2(1.3487476, 1.8017491)
+texture = ExtResource("8_4d7sh")
+
+[node name="EnemySpawner" type="Area2D" parent="." unique_id=897735657]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawner" unique_id=510243747]
+position = Vector2(298, -68)
+shape = SubResource("RectangleShape2D_x15ge")
+
+[node name="spawn timer" type="Timer" parent="." unique_id=37316713]
+autostart = true
+
+[node name="EnemyDespawner" type="Area2D" parent="." unique_id=1801700460]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDespawner" unique_id=154307163]
+position = Vector2(-340, 445.375)
+shape = SubResource("RectangleShape2D_k0akp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnemyDespawner" unique_id=2112365590]
+position = Vector2(911, 443.6875)
+shape = SubResource("RectangleShape2D_rj586")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EnemyDespawner" unique_id=2056649518]
+position = Vector2(285.5, 1056)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[connection signal="timeout" from="spawn timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="body_entered" from="EnemyDespawner" to="." method="_on_enemy_despawner_body_entered"]

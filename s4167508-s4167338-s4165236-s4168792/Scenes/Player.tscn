@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dcry4dvyucljb"]
+
+[ext_resource type="Script" uid="uid://c7ctl1g4hule5" path="res://Scenes/player.gd" id="1_gntrk"]
+[ext_resource type="PackedScene" uid="uid://x8koq8iaptyk" path="res://Scenes/Weapon.tscn" id="3_dewec"]
+[ext_resource type="Texture2D" uid="uid://darysaw5rbqpg" path="res://Character/13-138961_vector-spaces-ship-8-bit-spaceship-sprite.png" id="3_gntrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x15ge"]
+size = Vector2(58, 57)
+
+[node name="Node2D" type="CharacterBody2D" unique_id=743793916]
+script = ExtResource("1_gntrk")
+
+[node name="13138961VectorSpacesShip8BitSpaceshipSprite" type="Sprite2D" parent="." unique_id=2127747508]
+position = Vector2(1.9073486e-06, -9.536743e-07)
+scale = Vector2(0.09841954, 0.09841954)
+texture = ExtResource("3_gntrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333810138]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_x15ge")
+
+[node name="leftmuzzle" type="Marker2D" parent="." unique_id=738526237]
+position = Vector2(271, 296)
+
+[node name="rightmuzzle" type="Marker2D" parent="." unique_id=407239900]
+position = Vector2(346, 297)
+
+[node name="Weapon" parent="." unique_id=1103726736 instance=ExtResource("3_dewec")]
+position = Vector2(0, -23)

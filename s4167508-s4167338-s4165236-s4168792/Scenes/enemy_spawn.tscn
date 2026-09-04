@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://con68euvi178f"]
+
+[ext_resource type="Script" uid="uid://cd7qig264p18m" path="res://enemy/enemy_spawn.gd" id="1_g5vkx"]
+
+[node name="enemy spawn" type="Node2D" unique_id=1346348778]
+script = ExtResource("1_g5vkx")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=129432883]
+position = Vector2(1, 10)
+
+[node name="Timer" type="Timer" parent="." unique_id=611455856]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b6iqym1vswv7a"]
+
+[ext_resource type="Texture2D" uid="uid://b6mi7c2vh58em" path="res://Projectiles/blue_laser.png" id="1_rcgdx"]
+
+[node name="laser" type="Node2D" unique_id=1580868540]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586088869]
+texture = ExtResource("1_rcgdx")

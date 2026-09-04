@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bk6sm1n60235m"]
+
+[ext_resource type="Script" uid="uid://dyb7bb1pvctoe" path="res://Projectiles/projectilemovement.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://b6mi7c2vh58em" path="res://Projectiles/blue_laser.png" id="2_ycag2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gntrk"]
+
+[node name="Bullet" type="CharacterBody2D" unique_id=752787683]
+process_mode = 3
+collision_mask = 2
+script = ExtResource("1_oduel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=685587618]
+position = Vector2(-1.8626451e-09, -27)
+rotation = -3.140213
+texture = ExtResource("2_ycag2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1738738628]
+position = Vector2(0, -35)
+shape = SubResource("CircleShape2D_gntrk")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1974503957]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
